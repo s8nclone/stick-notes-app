@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    margin: 3em;
+    background: #333;
+    color: #fff;
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    z-index: 7;
+    padding: 15px 0px;
+    margin-left: 15px;
+}
+
+#empty-notes {
+    padding: 100px 0px;
+    text-align: center;
+}
+
+.owner-info {
+    color: #c0a00f;
+}
+
+.inputText {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid orange;
+    width: 30%;
+    margin: 15px;
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.sbtn {
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid orange;
+    background-color: #c0a00f;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+ul li h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+ul li p {
+    font-family:Verdana, Tahoma, sans-serif;
+    font-size: 1.1rem;
+}
+
+.delete {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border: 4px double whitesmoke;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+ul li a {
+    transform: rotate(-6deg);
+    cursor: default;
+}
+
+ul li:nth-child(even) a {
+    transform: rotate(4deg);
+    position: relative;
+    top: 5px;
+    background: #ff5733;
+}
+
+ul li:nth-child(3n) a {
+    transform: rotate(-3deg);
+    position: relative;
+    top: -5px;
+    background: #20471e;
+}
+
+ul li:nth-child(5n) a {
+    transform: rotate(7deg);
+    position: relative;
+    top: -10px;
+    background: #2a7b9b;
+}
+
+ul li a:hover,
+ul li a:focus {
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.3);
+    transform: scale(1.25);
+    position: relative;
+    z-index: 5
+}
+
+ol {
+    text-align: center;
+}
