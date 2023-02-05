@@ -20,7 +20,7 @@ body {
     margin-left: 15px;
 }
 
-#empty-notes {
+#empty-jotts {
     padding: 100px 0px;
     text-align: center;
 }
@@ -51,6 +51,33 @@ body {
     cursor: pointer;
     outline: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+ul {
+    overflow: hidden;
+    padding: 3em 1em;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #000;
+    background-color: #ffd31d;
+    display: block;
+    height: 10em;
+    width: 10em;
+    padding: 1em;
+    box-shadow: px 5px 7px rgba(33, 33, 33, 0.7)
+}
+
+ul li {
+    margin: 1em;
+    float: left;
+    position: relative;
 }
 
 ul li h2 {
@@ -113,4 +140,34 @@ ul li a:focus {
 
 ol {
     text-align: center;
+}
+
+ol li {
+    display: inline;
+    padding-right: 1em;
+}
+
+ol li aside {
+    color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin-top: 1em;
+    }
+
+    #new-title,
+    #new-jotts {
+        display: block;
+        width: 90%;
+        margin-left: 0px;
+    }
+
+    #heading {
+        margin-left: 0px;
+    }
+
+    .sbtn {
+        margin-left: 0px;
+    }
 }
