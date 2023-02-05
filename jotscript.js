@@ -1,8 +1,10 @@
-count = 0;
+let count =Number(window.localStorage.getItem("count"));
+
+if (!count) {
+    window.localStorage.setItem("count", "0");
+}
 
 function createNotes(noteTitle, noteBody) {
-    count += 1;
-
     document.getElementById("empty-jotts").classList.add("hidden");
 
     let li = document.createElement("li");
@@ -40,6 +42,14 @@ function createNewJotting (e){
     document.getElementById("new-title").value = "";
     document.getElementById("new-jotts").value = "";
 
+    count += 1;
+    window.localStorage.setItem("count", count);
+
+    while (window.localStorage.getItem(noteTitle)) {
+        noteTitle += " - 1";
+    }
+    window.localStorage.setItem(noteTitle, noteBody);
+
     createNotes(noteTitle, noteBody);
 }
 
@@ -54,9 +64,23 @@ function removeJotts (e) {
     }
 
     count -= 1;
+    window.localStorage.setItem("count", count);
+
+    window.localStorage.removeItem(e.target.previousElementSibling.innerText);
+
     if (count < 1) {
         document.getElementById("empty-jotts").className = "";
     }
+}
+
+for (i = 0; i < count + 1; i++){
+    let noteTitle = window.localStorage.key(i);
+    let noteBody = window.localStorage.getItem(noteTitle);
+
+    if (noteTitle !== "count" && noteTitle) {
+        createNotes(noteTitle, noteBody);
+    }
+    
 }
 
 document
